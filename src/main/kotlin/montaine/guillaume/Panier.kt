@@ -13,6 +13,14 @@ class Panier(val pays: Pays) {
         get() {
             val total = mangas.sumOf { it.prix }
             val withTax = total * (1 + pays.taxe)
-            return round(withTax * 100) / 100
+            val withReduc = when {
+                withTax <= 150 -> withTax
+                withTax <= 200 -> withTax * 0.98
+                withTax <= 300 -> withTax * 0.97
+                withTax <= 500 -> withTax * 0.95
+                withTax <= 1000 -> withTax * 0.93
+                else -> withTax * 0.90
+            }
+            return round(withReduc * 100) / 100
         }
 }
