@@ -8,7 +8,7 @@ import org.example.montaine.guillaume.montaine.guillaume.Manga
 import org.example.montaine.guillaume.montaine.guillaume.Panier
 import org.example.montaine.guillaume.montaine.guillaume.Pays
 
-class MontaineGuillaumeTest: BehaviorSpec({
+class TestCommandeFrance: BehaviorSpec({
 
     context("En tant que vendeur, je souhaite commander des livres en France"){
         given("un panier de 5 livres à 10€"){
