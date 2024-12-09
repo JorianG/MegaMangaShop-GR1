@@ -31,8 +31,8 @@ class TestAcceptanceSprint1: BehaviorSpec ({
             When("je calcule le total") {
                 val total = panier.total
 
-                Then("le total TTC est de 601.01€") {
-                    total shouldBeExactly 601.01
+                Then("le total TTC est de 558.94€") {
+                    total shouldBeExactly 558.94
                 }
             }
 

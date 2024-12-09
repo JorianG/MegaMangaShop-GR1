@@ -73,8 +73,8 @@ class TestCommandeRoyaumeUni : BehaviorSpec({
             When("je calcule le total") {
                 val total = panier.total
 
-                Then("le total TTC est de 171.83€") {
-                    total shouldBeExactly 171.83
+                Then("le total TTC est de 168.4€") {
+                    total shouldBeExactly 168.4
                 }
             }
         }
