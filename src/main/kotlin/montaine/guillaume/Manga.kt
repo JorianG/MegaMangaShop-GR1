@@ -2,13 +2,10 @@ package org.example.montaine.guillaume.montaine.guillaume
 
 data class Manga(val id: String, val titre: String, val prix: Double) {
     init {
-        if (mangas.contains(id)) {
-            if (mangas[id] != this) {
-                throw IllegalArgumentException("Manga $id déjà existant avec des valeurs différentes")
-            }
-        } else {
-            mangas[id] = this
+        if (prix <= 0) {
+            throw IllegalArgumentException("Le prix doit être positif")
         }
+        mangas[id] = this
     }
 
     companion object {
