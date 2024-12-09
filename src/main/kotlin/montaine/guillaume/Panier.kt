@@ -1,6 +1,8 @@
 package org.example.montaine.guillaume.montaine.guillaume
 
-class Panier {
+import kotlin.math.round
+
+class Panier(val pays: Pays) {
     private val mangas = mutableListOf<Manga>()
 
     fun ajouterManga(manga: Manga) = mangas.add(manga)
@@ -8,5 +10,9 @@ class Panier {
     fun retirerManga(manga: Manga) = mangas.remove(manga)
 
     val total: Double
-        get() = mangas.sumOf { it.prix }
+        get() {
+            val total = mangas.sumOf { it.prix }
+            val withTax = total * (1 + pays.taxe)
+            return round(withTax * 100) / 100
+        }
 }
