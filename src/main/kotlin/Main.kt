@@ -16,4 +16,6 @@ fun main() {
     panier2.ajouterManga(Manga("Manga4", 18.95), 12)
 
     println("Total panier2: ${panier2.total}")
+
+    println(panier2.ticket.formatted)
 }
