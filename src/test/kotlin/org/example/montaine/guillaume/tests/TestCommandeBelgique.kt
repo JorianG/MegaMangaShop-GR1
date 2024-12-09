@@ -99,6 +99,12 @@ class TestCommandeBelgique: BehaviorSpec({
 
         }
 
+        given("une livre à 4.999€"){
+            Then("une exception IllegalArgument est levée "){
+                shouldThrow<IllegalArgumentException> { Manga("1", "test", 4.999) }
+            }
+        }
+
 
 
 
