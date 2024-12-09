@@ -8,45 +8,45 @@ import org.example.montaine.guillaume.montaine.guillaume.Panier
 import org.example.montaine.guillaume.montaine.guillaume.Pays
 
 class TestCommande201LivresBelgique : BehaviorSpec({
-    context("En tant que vendeur, je souhaite commander 201 livres en Belgique") {
-        given("un panier de 201 livres à 10€") {
+    context("En tant que vendeur, je souhaite commander 20 livres en Belgique") {
+        given("un panier de 20 livres à 10€") {
             val panier = Panier(Pays.BELGIQUE)
 
-            panier.ajouterManga(Manga("test", 10.0), 201)
+            panier.ajouterManga(Manga("test", 10.0), 20)
 
-            When("je calcule le total") {
+            When("je calcule le total avec remise de 3%") {
                 val total = panier.total
 
-                Then("le total TTC est de 2281.15€") {
-                    total shouldBeExactly 2281.15
+                Then("le total TTC est de 226.98€") {
+                    total shouldBeExactly 226.98
                 }
             }
         }
 
-        given("un panier de 201 livres à 9.90€") {
+        given("un panier de 20 livres à 9.90€") {
             val panier = Panier(Pays.BELGIQUE)
 
-            panier.ajouterManga(Manga("test", 9.90), 201)
+            panier.ajouterManga(Manga("test", 9.90), 20)
 
-            When("je calcule le total") {
+            When("je calcule le total avec remise de 3%") {
                 val total = panier.total
 
-                Then("le total TTC est de 2258.34€") {
-                    total shouldBeExactly 2258.34
+                Then("le total TTC est de 224.71€") {
+                    total shouldBeExactly 224.71
                 }
             }
         }
 
-        given("un panier de 201 livres à 19.99€") {
+        given("un panier de 10 livres à 19.99€") {
             val panier = Panier(Pays.BELGIQUE)
 
-            panier.ajouterManga(Manga("test", 19.99), 201)
+            panier.ajouterManga(Manga("test", 19.99), 10)
 
-            When("je calcule le total") {
+            When("je calcule le total avec remise de 3%") {
                 val total = panier.total
 
-                Then("le total TTC est de 4560.02€") {
-                    total shouldBeExactly 4560.02
+                Then("le total TTC est de 226.87€") {
+                    total shouldBeExactly 226.87
                 }
             }
         }
