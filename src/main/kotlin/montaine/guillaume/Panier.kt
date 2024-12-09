@@ -5,9 +5,15 @@ import kotlin.math.round
 class Panier(val pays: Pays) {
     private val mangas = mutableListOf<Manga>()
 
-    fun ajouterManga(manga: Manga, quantity: Int = 1) = repeat(quantity) { mangas.add(manga) }
+    fun ajouterManga(manga: Manga, quantity: Int = 1) {
+        if (quantity < 1) throw IllegalArgumentException("La quantité doit être supérieure à 0")
+        repeat(quantity) { mangas.add(manga) }
+    }
 
-    fun retirerManga(manga: Manga, quantity: Int = 1) = repeat(quantity) { mangas.remove(manga) }
+    fun retirerManga(manga: Manga, quantity: Int = 1) {
+        if (quantity < 1) throw IllegalArgumentException("La quantité doit être supérieure à 0")
+        repeat(quantity) { mangas.remove(manga) }
+    }
 
     val total: Double
         get() {
