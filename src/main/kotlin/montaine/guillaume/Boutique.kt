@@ -1,5 +1,7 @@
 package montaine.guillaume
 
-data class Boutique(val pays: String) {
+import org.example.montaine.guillaume.montaine.guillaume.Pays
+
+data class Boutique(val pays: Pays) {
 
 }
