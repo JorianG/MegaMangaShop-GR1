@@ -1,12 +1,10 @@
-
 package montaine.guillaume
 
 import de.huxhorn.sulky.ulid.ULID;
 
 
-data class TicketDeCaisse(val Id: String = ULID().nextULID() ) {
-
-    val TotalTtc: Double = 0.0
-    val Taxe: Double = 0.0
-    val Remise: Double = 0.0
+data class TicketDeCaisse(val id: String = ULID().nextULID()) {
+    val totalTtc: Double = 0.0
+    val taxe: Double = 0.0
+    val remise: Double = 0.0
 }
